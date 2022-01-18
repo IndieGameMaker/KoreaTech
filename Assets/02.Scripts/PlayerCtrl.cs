@@ -10,6 +10,8 @@ public class PlayerCtrl : MonoBehaviour
 
     public float speed = 20.0f;
 
+    [System.NonSerialized]  //C#
+    [HideInInspector]       // UnityEngine
     public Animation anim;
 
     // Start is called before the first frame update
