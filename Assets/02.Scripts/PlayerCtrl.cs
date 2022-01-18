@@ -8,12 +8,14 @@ public class PlayerCtrl : MonoBehaviour
     private float h;
     private float r;
 
-    public float speed = 8.0f;
+    public float speed = 20.0f;
+
+    public Animation anim;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = this.gameObject.GetComponent<Animation>(); // Generic Syntax
     }
 
     // Update is called once per frame
