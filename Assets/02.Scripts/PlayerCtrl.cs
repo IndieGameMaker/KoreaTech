@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     private float v;
+    private float h;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +17,10 @@ public class PlayerCtrl : MonoBehaviour
     void Update()
     {
         v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
-        Debug.Log("v=" + v); // print("v=" + v);
+        h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
 
-        //transform.position += new Vector3(0, 0, 0.1f);
-        transform.Translate(Vector3.forward * 0.1f);
+        transform.Translate(Vector3.forward * 0.1f * v); //전/후진
+        transform.Translate(Vector3.right * 0.1f * h);   //좌/우
 
         /* 정규화 벡터(Normalized Vector), 단위벡터(Unit Vector)
             Vector3.forward = Vector3(0, 0, 1)
