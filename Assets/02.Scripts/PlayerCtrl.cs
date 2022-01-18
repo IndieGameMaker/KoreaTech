@@ -18,6 +18,7 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         anim = this.gameObject.GetComponent<Animation>(); // Generic Syntax
+        anim.Play("Idle");
     }
 
     // Update is called once per frame
