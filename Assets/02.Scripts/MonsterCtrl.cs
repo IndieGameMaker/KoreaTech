@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class MonsterCtrl : MonoBehaviour
 {
     private NavMeshAgent agent;
+    private Animator anim;
 
     private Transform playerTr;
     private Transform monsterTr;
@@ -16,6 +17,7 @@ public class MonsterCtrl : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
 
         playerTr = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();
         monsterTr = transform; // GetComponent<Transform>();
@@ -24,17 +26,23 @@ public class MonsterCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 두 좌표간의 거리를 계산
         float distance = Vector3.Distance(monsterTr.position, playerTr.position);
 
+        // 추적사정거리 범위안에 들어온 경우
         if (distance <= traceDist)
         {
             // 추적 명령
             agent.SetDestination(playerTr.position);
             agent.isStopped = false;
+            // Walk 애니메이션 실행
+            anim.SetBool("IsTrace", true);
         }
         else
         {
             agent.isStopped = true;
+            // Idle 애니메이션 실행
+            anim.SetBool("IsTrace", false);
         }
 
     }
