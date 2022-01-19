@@ -24,7 +24,18 @@ public class MonsterCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 추적 명령
-        agent.SetDestination(playerTr.position);
+        float distance = Vector3.Distance(monsterTr.position, playerTr.position);
+
+        if (distance <= traceDist)
+        {
+            // 추적 명령
+            agent.SetDestination(playerTr.position);
+            agent.isStopped = false;
+        }
+        else
+        {
+            agent.isStopped = true;
+        }
+
     }
 }
