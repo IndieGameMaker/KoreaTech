@@ -48,9 +48,13 @@ public class MonsterCtrl : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
+        // 충돌한 객체의 태그를 비교해서 총알여부를 판단
         if (coll.collider.CompareTag("BULLET"))
         {
+            //총알 삭제
             Destroy(coll.gameObject);
+            //Hit 애니메이션 실행
+            anim.SetTrigger("Hit");
         }
     }
 }
