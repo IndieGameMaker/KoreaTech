@@ -13,6 +13,9 @@ public class FireCtrl : MonoBehaviour
     [SerializeField]
     private MeshRenderer muzzleFlash;
 
+    // Raycast 결괏값을 리턴받을 변수
+    private RaycastHit hit;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -35,6 +38,12 @@ public class FireCtrl : MonoBehaviour
     {
         // 총알 생성 : Instantiate(생성할객체, 위치, 각도)
         //Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+
+        if (Physics.Raycast(firePos.position, firePos.forward, out hit, 10.0f))
+        {
+            Debug.Log(hit.collider.name);
+        }
+
 
         // 총소리 발생
         audio.PlayOneShot(fireSfx, 0.8f);
