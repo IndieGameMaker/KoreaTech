@@ -66,6 +66,11 @@ public class FireCtrl : MonoBehaviour
         // {컴포넌트}.transform
         muzzleFlash.transform.localScale = Vector3.one * scale; // new Vector3(scale, scale, scale);
 
+        // Muzzle Flash 회전
+        float angle = Random.Range(0, 360);
+        muzzleFlash.transform.localRotation = Quaternion.Euler(0, 0, angle);
+        //Quaternion.Euler(Vector3.forward * angle)
+
         muzzleFlash.enabled = true;
         // Sleep 
         yield return new WaitForSeconds(0.2f);
