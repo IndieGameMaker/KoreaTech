@@ -36,5 +36,17 @@ public class FireCtrl : MonoBehaviour
 
         // 총소리 발생
         audio.PlayOneShot(fireSfx, 0.8f);
+        // 총구화염
+        StartCoroutine(ShowMuzzleFlash());
+    }
+
+    // 코루틴
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+        // Sleep 
+        yield return new WaitForSeconds(0.2f);
+
+        muzzleFlash.enabled = false;
     }
 }
