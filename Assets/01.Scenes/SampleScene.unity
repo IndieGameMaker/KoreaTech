@@ -850,6 +850,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400046, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
   m_PrefabInstance: {fileID: 1199216110}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199216116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199216111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54adfffaf26b1404a88d34fd5c7c4063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5724448286780425956, guid: 5ffec1eff384c49b8967f2b85573ad9c, type: 3}
+  firePos: {fileID: 896941917}
 --- !u!1001 &1726530007
 PrefabInstance:
   m_ObjectHideFlags: 0
