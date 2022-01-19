@@ -27,6 +27,7 @@ public class RemoveBullet : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(normalVector);
 
         // 스파크 생성
-        Instantiate(sparkEffect, contactPoint, rot);
+        GameObject obj = Instantiate(sparkEffect, contactPoint, rot);
+        Destroy(obj, 0.4f);
     }
 }
