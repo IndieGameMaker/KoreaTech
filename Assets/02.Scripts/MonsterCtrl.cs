@@ -10,6 +10,9 @@ public class MonsterCtrl : MonoBehaviour
     private Transform playerTr;
     private Transform monsterTr;
 
+    [Range(10.0f, 50.0f)]
+    public float traceDist = 10.0f;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
