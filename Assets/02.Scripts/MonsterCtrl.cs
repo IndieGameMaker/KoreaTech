@@ -44,6 +44,13 @@ public class MonsterCtrl : MonoBehaviour
             // Idle 애니메이션 실행
             anim.SetBool("IsTrace", false);
         }
+    }
 
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+        }
     }
 }
