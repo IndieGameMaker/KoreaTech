@@ -57,4 +57,9 @@ public class MonsterCtrl : MonoBehaviour
             anim.SetTrigger("Hit");
         }
     }
+
+    public void OnDamage()
+    {
+        anim.SetTrigger("Hit");
+    }
 }

@@ -39,9 +39,10 @@ public class FireCtrl : MonoBehaviour
         // 총알 생성 : Instantiate(생성할객체, 위치, 각도)
         //Instantiate(bulletPrefab, firePos.position, firePos.rotation);
 
-        if (Physics.Raycast(firePos.position, firePos.forward, out hit, 10.0f))
+        if (Physics.Raycast(firePos.position, firePos.forward, out hit, 10.0f, 1 << 8))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
+            hit.collider.GetComponent<MonsterCtrl>().OnDamage();
         }
 
 
