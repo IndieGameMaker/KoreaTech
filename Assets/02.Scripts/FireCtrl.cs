@@ -43,6 +43,29 @@ public class FireCtrl : MonoBehaviour
     // 코루틴
     IEnumerator ShowMuzzleFlash()
     {
+        // 텍스처의 Offset 변경
+        /*
+            난수 발생
+            Random.Range(최소값, 최대값)
+
+            Random.Range(0, 10)        => 0, ...., 9
+            Random.Range(0.0f, 10.0f)  => 0.0f, ... , 10.0f
+
+            (0 , 1) * 0.5f => (0, 0.5f)
+
+            (0, 0)
+            (0, 0.5f)
+            (0.5f, 0.5f)
+            (0.5f, 0)
+        */
+        Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
+        muzzleFlash.material.mainTextureOffset = offset;
+
+        // 스케일 변경
+        float scale = Random.Range(1.0f, 2.5f);
+        // {컴포넌트}.transform
+        muzzleFlash.transform.localScale = Vector3.one * scale; // new Vector3(scale, scale, scale);
+
         muzzleFlash.enabled = true;
         // Sleep 
         yield return new WaitForSeconds(0.2f);
