@@ -7,6 +7,14 @@ public class FireCtrl : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePos;
 
+    private AudioSource audio;
+    public AudioClip fireSfx;
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
